@@ -13,6 +13,7 @@
     "validate": "node scripts/validate.js",
     "icons": "python3 scripts/make-icons.py",
     "pack": "bash scripts/package.sh",
-    "check": "npm run validate && npm run test"
+    "check": "npm run validate && npm run test",
+    "preview": "python3 scripts/make-social-preview.py"
   }
 }

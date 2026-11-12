@@ -150,6 +150,17 @@ if (zh && en) {
   }
 }
 
+// README images: relative paths must exist so the rendered page never breaks.
+const readmePath = resolve(ROOT, 'README.md');
+if (existsSync(readmePath)) {
+  const readme = readFileSync(readmePath, 'utf8');
+  for (const match of readme.matchAll(/!\[[^\]]*\]\(([^)\s]+)\)/g)) {
+    const target = match[1];
+    if (/^(https?:|data:)/.test(target)) continue;
+    if (!existsSync(resolve(ROOT, target))) fail(`README.md: missing image ${target}`);
+  }
+}
+
 // Page wiring: every element id used by the page script must exist, and every
 // local stylesheet/script referenced by the HTML must be on disk.
 const pages = [
