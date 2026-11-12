@@ -13,6 +13,8 @@ test('validateDefaults accepts a sane range and fills options', () => {
   assert.deepEqual(result.value.interval, { minSec: 3600, maxSec: 7200 });
   assert.equal(result.value.options.skipActive, false);
   assert.equal(result.value.options.skipAudible, DEFAULT_OPTIONS.skipAudible);
+  assert.equal(result.value.options.reloadAllTabs, false);
+  assert.equal(DEFAULT_OPTIONS.reloadAllTabs, false);
 });
 
 test('validateDefaults rejects inverted, out-of-range and missing ranges', () => {

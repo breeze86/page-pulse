@@ -192,7 +192,7 @@
     "message": "Refresh every matching tab"
   },
   "optionsReloadAllTabsHint": {
-    "message": "When off, only the first matching tab is refreshed each round."
+    "message": "Off by default: only the first matching tab is refreshed; check to refresh every match in the same round."
   },
   "optionsBypassCache": {
     "message": "Hard refresh (bypass cache)"

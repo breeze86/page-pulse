@@ -192,7 +192,7 @@
     "message": "刷新所有匹配的标签页"
   },
   "optionsReloadAllTabsHint": {
-    "message": "关闭后每轮只刷新第一个匹配的标签页。"
+    "message": "默认只刷新第一个匹配标签页；勾选后同一轮刷新全部。"
   },
   "optionsBypassCache": {
     "message": "强制刷新（绕过缓存）"

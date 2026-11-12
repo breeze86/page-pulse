@@ -26,10 +26,11 @@ function draft(overrides = {}) {
 
 test('default state uses a 60–120 minute interval and safe options', () => {
   const state = createDefaultState(now);
-  assert.equal(state.schemaVersion, 1);
+  assert.equal(state.schemaVersion, 2);
   assert.equal(state.globalEnabled, true);
   assert.deepEqual(state.settings.defaults.interval, { minSec: 3600, maxSec: 7200 });
   assert.deepEqual(state.settings.defaults.options, { ...DEFAULT_OPTIONS });
+  assert.equal(state.settings.defaults.options.reloadAllTabs, false);
   assert.deepEqual(state.rules, []);
   assert.equal(state.meta.createdAt, now);
 });
@@ -88,7 +89,7 @@ test('normalizeRule fills ids and stats and drops invalid rules', () => {
 
 test('migrateState repairs anything it is given', () => {
   assert.deepEqual(migrateState(null, now).rules, []);
-  assert.equal(migrateState('nonsense', now).schemaVersion, 1);
+  assert.equal(migrateState('nonsense', now).schemaVersion, 2);
 
   const migrated = migrateState(
     {
@@ -107,11 +108,35 @@ test('migrateState repairs anything it is given', () => {
   );
 
   assert.equal(migrated.globalEnabled, false);
-  assert.equal(migrated.schemaVersion, 1);
+  assert.equal(migrated.schemaVersion, 2);
   assert.deepEqual(migrated.settings.defaults.interval, { minSec: 60, maxSec: 120 });
   assert.equal(migrated.rules.length, 2);
   assert.notEqual(migrated.rules[0].id, migrated.rules[1].id);
   assert.equal(migrated.meta.createdAt, 5);
+});
+
+test('v1 state resets the shared default but keeps per-rule choices', () => {
+  const legacy = {
+    schemaVersion: 1,
+    settings: {
+      defaults: {
+        interval: { minSec: 3600, maxSec: 7200 },
+        options: { ...DEFAULT_OPTIONS, reloadAllTabs: true },
+      },
+    },
+    rules: [
+      {
+        ...draft(),
+        id: 'legacy-rule',
+        options: { ...DEFAULT_OPTIONS, reloadAllTabs: true },
+      },
+    ],
+  };
+
+  const migrated = migrateState(legacy, now);
+  assert.equal(migrated.schemaVersion, 2);
+  assert.equal(migrated.settings.defaults.options.reloadAllTabs, false);
+  assert.equal(migrated.rules[0].options.reloadAllTabs, true);
 });
 
 test('migrateState caps the rule list', () => {

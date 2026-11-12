@@ -124,6 +124,8 @@ test('rule lifecycle drives alarms, reloads, stats, auto-open and pause', async 
   assert.equal(saved.runtime[0].dueAt, armed.scheduledTime);
   assert.ok(fake.calls.badge.at(-1) === '1', 'badge should show the enabled rule count');
 
+  assert.equal(saved.state.rules[0].options.reloadAllTabs, false, 'new rules default to one tab');
+
   // 2. A matching tab is reloaded; stats persist; the timer is re-armed.
   fake.tabs.push(makeTab({ id: 1 }));
   const first = await refresh.runRule(saved.state.rules[0]);
@@ -170,6 +172,36 @@ test('rule lifecycle drives alarms, reloads, stats, auto-open and pause', async 
   await rules.deleteRule(ruleId);
   assert.equal(fake.alarms.size, 0);
   assert.equal((await rules.getStatePayload()).state.rules.length, 0);
+});
+
+test('default rule refreshes only the first matching tab; manual refreshes all', async () => {
+  const fake = createFakeChrome();
+  globalThis.chrome = fake.chrome;
+
+  const rules = await import('../src/background/rule-service.js');
+  const refresh = await import('../src/background/refresh-service.js');
+
+  const saved = await rules.saveRule({
+    name: 'Defaults',
+    match: { type: 'host', value: 'example.com' },
+    interval: { minSec: 60, maxSec: 60 },
+  });
+  assert.equal(saved.state.rules[0].options.reloadAllTabs, false);
+
+  fake.tabs.push(
+    makeTab({ id: 21 }),
+    makeTab({ id: 22, url: 'https://example.com/second' }),
+    makeTab({ id: 23, url: 'https://other.dev/' }),
+  );
+
+  const scheduled = await refresh.runRule(saved.state.rules[0]);
+  assert.deepEqual(scheduled.reloaded, [21]);
+
+  fake.calls.reload.length = 0;
+  const manual = await refresh.runRule(saved.state.rules[0], { manual: true });
+  assert.deepEqual(manual.reloaded.sort(), [21, 22]);
+
+  await rules.deleteRule(saved.state.rules[0].id);
 });
 
 test('manual refresh ignores the focused/audible policy and refreshes all tabs', async () => {

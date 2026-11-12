@@ -9,7 +9,7 @@ export const APP_NAME = 'PagePulse';
 export const APP_VERSION = '0.1.0';
 
 /** Bump only together with a migration inside `state.js`. */
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 
 /** Single storage key: one object, one writer (the service worker). */
 export const STORAGE_KEY = 'pagepulse.state.v1';
@@ -29,7 +29,7 @@ export const DEFAULT_INTERVAL = Object.freeze({ minSec: 60 * 60, maxSec: 120 * 6
 export const DEFAULT_OPTIONS = Object.freeze({
   skipActive: true,
   skipAudible: true,
-  reloadAllTabs: true,
+  reloadAllTabs: false,
   bypassCache: false,
 });
 

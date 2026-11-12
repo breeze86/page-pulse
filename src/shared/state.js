@@ -213,6 +213,12 @@ export function migrateState(raw, now = Date.now()) {
   state.globalEnabled = raw.globalEnabled !== false;
   state.settings = normalizeSettings(raw.settings);
 
+  // v2: "refresh every matching tab" is now opt-in. Reset only the shared
+  // default; per-rule choices the user already made stay untouched.
+  if ((Number(raw.schemaVersion) || 0) < 2) {
+    state.settings.defaults.options.reloadAllTabs = false;
+  }
+
   const seen = new Set();
   const rules = [];
   const sourceRules = Array.isArray(raw.rules) ? raw.rules : [];
