@@ -120,6 +120,25 @@ body.popup {
   flex: 0 0 auto;
 }
 
+.rule-actions .icon-btn {
+  width: 26px;
+  height: 26px;
+}
+
+.rule.is-confirming {
+  background: rgba(220, 38, 38, 0.06);
+}
+
+.rule-confirm-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--danger);
+  font-size: 12px;
+}
+
 .empty-state {
   padding: 22px 20px 26px;
   text-align: center;

@@ -142,6 +142,7 @@ function renderRule(rule) {
   actions.append(
     iconButton('refresh', t('popupRefresh'), refreshIcon(), () => void refreshRule(rule)),
     iconButton('edit', t('popupEditRule'), editIcon(), () => openOptions(`#rule=${encodeURIComponent(rule.id)}`)),
+    iconButton('delete', t('delete'), deleteIcon(), () => enterDeleteConfirm(item, rule)),
   );
 
   item.append(toggleLabel, body, actions);
@@ -185,6 +186,10 @@ function refreshIcon() {
 
 function editIcon() {
   return svgIcon(['M12 20h9', 'M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z']);
+}
+
+function deleteIcon() {
+  return svgIcon(['M3 6h18', 'M8 6V4h8v2', 'M19 6l-1 14H6L5 6', 'M10 11v6', 'M14 11v6']);
 }
 
 function displayName(rule) {
@@ -259,6 +264,47 @@ async function refreshRule(rule) {
     await load();
   } catch (error) {
     toast(errorText(error), true);
+  }
+}
+
+function enterDeleteConfirm(item, rule) {
+  item.classList.add('is-confirming');
+  item.replaceChildren();
+
+  const text = document.createElement('span');
+  text.className = 'rule-confirm-text';
+  text.textContent = t('popupConfirmDelete', [displayName(rule)]);
+
+  const actions = document.createElement('div');
+  actions.className = 'rule-actions';
+
+  const cancel = document.createElement('button');
+  cancel.type = 'button';
+  cancel.className = 'btn small';
+  cancel.textContent = t('cancel');
+  cancel.addEventListener('click', () => render());
+
+  const confirm = document.createElement('button');
+  confirm.type = 'button';
+  confirm.className = 'btn small danger';
+  confirm.textContent = t('delete');
+  confirm.addEventListener('click', () => {
+    void deleteRule(rule);
+  });
+
+  actions.append(cancel, confirm);
+  item.append(text, actions);
+  confirm.focus();
+}
+
+async function deleteRule(rule) {
+  try {
+    await api.deleteRule(rule.id);
+    toast(t('popupDeleted'));
+    await load();
+  } catch (error) {
+    toast(errorText(error), true);
+    await load();
   }
 }
 

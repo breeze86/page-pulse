@@ -403,5 +403,11 @@
   },
   "chipStartUrl": {
     "message": "启动 URL"
+  },
+  "popupConfirmDelete": {
+    "message": "删除「$1」？"
+  },
+  "popupDeleted": {
+    "message": "已删除"
   }
 }

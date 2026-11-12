@@ -403,5 +403,11 @@
   },
   "chipStartUrl": {
     "message": "start URL"
+  },
+  "popupConfirmDelete": {
+    "message": "Delete \"$1\"?"
+  },
+  "popupDeleted": {
+    "message": "Deleted"
   }
 }
