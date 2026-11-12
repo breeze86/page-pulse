@@ -26,9 +26,6 @@
   "settings": {
     "message": "Settings"
   },
-  "versionLabel": {
-    "message": "Version $1"
-  },
   "never": {
     "message": "never"
   },
@@ -250,9 +247,6 @@
   },
   "optionsRepo": {
     "message": "Project home"
-  },
-  "optionsVersion": {
-    "message": "Version $1"
   },
   "optionsNewRule": {
     "message": "New rule"

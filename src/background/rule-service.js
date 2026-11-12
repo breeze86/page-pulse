@@ -5,7 +5,7 @@
  * repairs alarms + badge.
  */
 
-import { APP_VERSION, MAX_RULES } from '../shared/constants.js';
+import { MAX_RULES } from '../shared/constants.js';
 import { AppError, ErrorCode, ValidationError } from '../shared/errors.js';
 import {
   defaultStats,
@@ -23,7 +23,7 @@ import { commitState, getState } from './state-store.js';
 export async function getStatePayload() {
   const state = await getState();
   const runtime = await getRuntimeStatus(state);
-  return { state, runtime, version: APP_VERSION, maxRules: MAX_RULES };
+  return { state, runtime, maxRules: MAX_RULES };
 }
 
 function assertRuleExists(state, id) {

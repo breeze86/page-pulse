@@ -6,7 +6,6 @@
  */
 
 import {
-  APP_VERSION,
   DEFAULT_INTERVAL,
   DEFAULT_OPTIONS,
   MAX_INTERVAL_SEC,
@@ -97,7 +96,7 @@ export function createDefaultState(now = Date.now()) {
     globalEnabled: true,
     settings: createDefaultSettings(),
     rules: [],
-    meta: { createdAt: now, updatedAt: now, appVersion: APP_VERSION },
+    meta: { createdAt: now, updatedAt: now },
   };
 }
 
@@ -235,7 +234,6 @@ export function migrateState(raw, now = Date.now()) {
   state.meta = {
     createdAt: finiteOr(raw.meta?.createdAt, now),
     updatedAt: finiteOr(raw.meta?.updatedAt, now),
-    appVersion: APP_VERSION,
   };
   return state;
 }

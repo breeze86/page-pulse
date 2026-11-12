@@ -1,6 +1,6 @@
 {
   "name": "page-pulse-extension",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "type": "module",
   "description": "PagePulse（页脉）— 按随机时间周期自动刷新指定页面，让网站保持活跃。",

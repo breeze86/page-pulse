@@ -26,9 +26,6 @@
   "settings": {
     "message": "设置"
   },
-  "versionLabel": {
-    "message": "版本 $1"
-  },
   "never": {
     "message": "从未"
   },
@@ -250,9 +247,6 @@
   },
   "optionsRepo": {
     "message": "项目主页"
-  },
-  "optionsVersion": {
-    "message": "版本 $1"
   },
   "optionsNewRule": {
     "message": "新建规则"

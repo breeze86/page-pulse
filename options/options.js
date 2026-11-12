@@ -143,10 +143,10 @@ async function load() {
 
 function renderAll() {
   if (!model) return;
-  const { state, version, maxRules } = model;
+  const { state, maxRules } = model;
 
-  els.version.textContent = t('optionsVersion', [version]);
-  els.footerVersion.textContent = `v${version}`;
+  els.version.textContent = `v${chrome.runtime.getManifest().version}`;
+  els.footerVersion.textContent = `v${chrome.runtime.getManifest().version}`;
   els.global.checked = state.globalEnabled;
 
   els.ruleCount.textContent = t('popupRuleCount', [String(state.rules.length)]);

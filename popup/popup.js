@@ -64,12 +64,12 @@ async function load() {
 
 function render() {
   if (!model) return;
-  const { state, version } = model;
+  const { state } = model;
 
   els.globalToggle.checked = state.globalEnabled;
   els.status.textContent = state.globalEnabled ? t('popupStatusActive') : t('popupPaused');
   els.pausedBanner.hidden = state.globalEnabled;
-  els.version.textContent = `v${version}`;
+  els.version.textContent = `v${chrome.runtime.getManifest().version}`;
 
   els.list.replaceChildren();
   for (const rule of state.rules) {

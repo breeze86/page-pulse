@@ -5,7 +5,7 @@
  * concurrent alarms/messages can never lose an update.
  */
 
-import { APP_VERSION, SCHEMA_VERSION, STORAGE_KEY } from '../shared/constants.js';
+import { SCHEMA_VERSION, STORAGE_KEY } from '../shared/constants.js';
 import { AppError, ErrorCode } from '../shared/errors.js';
 import { createDefaultState, migrateState } from '../shared/state.js';
 
@@ -42,7 +42,7 @@ export function mutateState(mutator) {
     const state = await readStateInternal();
     const next = (await mutator(state)) || state;
     next.schemaVersion = SCHEMA_VERSION;
-    next.meta = { ...(next.meta || {}), updatedAt: Date.now(), appVersion: APP_VERSION };
+    next.meta = { ...(next.meta || {}), updatedAt: Date.now() };
     try {
       await chrome.storage.local.set({ [STORAGE_KEY]: next });
     } catch (error) {

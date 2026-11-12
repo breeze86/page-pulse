@@ -6,7 +6,6 @@
  */
 
 export const APP_NAME = 'PagePulse';
-export const APP_VERSION = '0.1.0';
 
 /** Bump only together with a migration inside `state.js`. */
 export const SCHEMA_VERSION = 2;
