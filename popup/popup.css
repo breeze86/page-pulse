@@ -125,6 +125,15 @@ body.popup {
   height: 26px;
 }
 
+.rule-actions .icon-btn.danger {
+  color: var(--danger);
+}
+
+.rule-actions .icon-btn.danger:hover {
+  background: rgba(220, 38, 38, 0.12);
+  color: var(--danger);
+}
+
 .rule.is-confirming {
   background: rgba(220, 38, 38, 0.06);
 }

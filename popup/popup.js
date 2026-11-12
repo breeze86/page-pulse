@@ -142,17 +142,17 @@ function renderRule(rule) {
   actions.append(
     iconButton('refresh', t('popupRefresh'), refreshIcon(), () => void refreshRule(rule)),
     iconButton('edit', t('popupEditRule'), editIcon(), () => openOptions(`#rule=${encodeURIComponent(rule.id)}`)),
-    iconButton('delete', t('delete'), deleteIcon(), () => enterDeleteConfirm(item, rule)),
+    iconButton('delete', t('delete'), deleteIcon(), () => enterDeleteConfirm(item, rule), 'danger'),
   );
 
   item.append(toggleLabel, body, actions);
   return item;
 }
 
-function iconButton(action, label, svg, handler) {
+function iconButton(action, label, svg, handler, extraClass = '') {
   const button = document.createElement('button');
   button.type = 'button';
-  button.className = 'icon-btn';
+  button.className = extraClass ? `icon-btn ${extraClass}` : 'icon-btn';
   button.dataset.action = action;
   button.title = label;
   button.setAttribute('aria-label', label);
