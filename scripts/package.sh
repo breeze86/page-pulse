@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Build the store-ready zip: runtime files only.
+# Build outputs:
+#   dist/<name>/           unpacked extension (load-unpacked / local testing)
+#   release/<name>.zip     store & GitHub Release asset
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
@@ -7,19 +9,22 @@ cd "$(dirname "$0")/.."
 node scripts/validate.js
 
 VERSION="$(node -p "require('./manifest.json').version")"
-ZIP="dist/page-pulse-extension-${VERSION}.zip"
+NAME="page-pulse-extension-${VERSION}"
+DIST="dist/${NAME}"
+ZIP="release/${NAME}.zip"
 
-mkdir -p dist
-rm -f "$ZIP"
+# dist/ and release/ are fully generated, so a clean rebuild is safe.
+rm -rf dist release
+mkdir -p "$DIST" release
+cp manifest.json "$DIST/"
+cp -R src popup options icons _locales "$DIST/"
+find "$DIST" -name '.DS_Store' -delete 2>/dev/null || true
 
-zip -r -X "$ZIP" \
-  manifest.json \
-  src \
-  popup \
-  options \
-  icons \
-  _locales \
-  -x '*.DS_Store' >/dev/null
+ZIP_ABS="$(pwd)/${ZIP}"
+(cd "$DIST" && zip -r -X "$ZIP_ABS" . -x '*.DS_Store' >/dev/null)
 
-echo "built $ZIP ($(du -h "$ZIP" | cut -f1))"
-unzip -l "$ZIP" | sed -n '1,200p'
+echo "unpacked : ${DIST}/"
+echo "release  : ${ZIP} ($(du -h "$ZIP" | cut -f1))"
+echo "load it  : chrome://extensions -> Load unpacked -> $(pwd)/${DIST}"
+echo
+unzip -l "$ZIP" | tail -3

@@ -3,6 +3,7 @@
 
 # Build artifacts
 dist/
+release/
 *.zip
 
 # Dependencies (not used, kept for safety)

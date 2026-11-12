@@ -23,6 +23,7 @@
 2. Chrome 打开 `chrome://extensions`；Edge 打开 `edge://extensions`。
 3. 打开「开发者模式」。
 4. 选择「加载已解压的扩展程序」，选中仓库根目录（含 `manifest.json` 的那一层）。
+   也可以先执行 `npm run pack`，然后选中未压缩产物 `dist/page-pulse-extension-0.1.0/`。
 
 首次安装会自动打开设置页，点击「添加规则」即可开始。
 
@@ -66,7 +67,7 @@
 npm test          # node --test，纯逻辑单元测试
 npm run validate  # manifest / 语言包 / 图标 / i18n key 静态校验
 npm run check     # validate + test
-npm run pack      # 生成 dist/page-pulse-extension-<version>.zip
+npm run pack      # 生成 dist/<name>/（未压缩，可直接加载）+ release/<name>.zip
 npm run icons     # 重新生成图标（需要 Python + Pillow）
 ```
 
@@ -109,7 +110,15 @@ npm run check
 npm run pack
 ```
 
-- **Chrome Web Store**：上传 `dist/page-pulse-extension-<version>.zip`，填写商店名 `PagePulse - 随机保活刷新`、简介、隐私问卷（选择「不收集用户数据」，说明 `tabs` 权限仅用于 URL 匹配）。
+产物：
+
+| 路径 | 用途 |
+| --- | --- |
+| `dist/page-pulse-extension-<version>/` | 未压缩扩展目录，可直接「加载已解压的扩展程序」验证 |
+| `release/page-pulse-extension-<version>.zip` | 商店上传与 GitHub Release 资产 |
+
+- **GitHub Release**：打 `v<version>` 标签，上传 `release/page-pulse-extension-<version>.zip`，正文可直接用 [CHANGELOG.md](CHANGELOG.md) 对应版本段落。
+- **Chrome Web Store**：上传 `release/page-pulse-extension-<version>.zip`，填写商店名 `PagePulse - 随机保活刷新`、简介、隐私问卷（选择「不收集用户数据」，说明 `tabs` 权限仅用于 URL 匹配）。
 - **Edge Add-ons**：同一 zip 直接上传；Edge 与 Chrome 共用 MV3 API，无需额外字段。
 - 版本号需同时修改 `manifest.json` 与 `package.json`（`npm run validate` 会检查一致性）。
 
