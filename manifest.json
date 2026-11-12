@@ -3,9 +3,13 @@
   "name": "__MSG_appName__",
   "short_name": "PagePulse",
   "description": "__MSG_appDesc__",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "default_locale": "zh_CN",
-  "permissions": ["alarms", "storage", "tabs"],
+  "permissions": [
+    "alarms",
+    "storage",
+    "tabs"
+  ],
   "background": {
     "service_worker": "src/background/service-worker.js",
     "type": "module"
