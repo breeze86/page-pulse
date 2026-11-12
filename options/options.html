@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PagePulse</title>
+    <link rel="stylesheet" href="../src/ui/base.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body class="options">
+    <header class="page-header">
+      <img class="page-logo" src="../icons/icon128.png" alt="" width="44" height="44" />
+      <div class="page-heading">
+        <h1 data-i18n="optionsTitle"></h1>
+        <p class="muted" data-i18n="optionsSubtitle"></p>
+      </div>
+      <span id="version" class="pill"></span>
+    </header>
+
+    <main>
+      <section class="panel" aria-labelledby="rules-heading">
+        <div class="panel-head">
+          <h2 id="rules-heading" data-i18n="optionsRules"></h2>
+          <span id="rule-count" class="muted"></span>
+          <button id="add-rule" class="btn primary" data-i18n="optionsAddRule"></button>
+        </div>
+        <p id="rules-empty" class="empty" data-i18n="optionsNoRules" hidden></p>
+        <div id="rules" class="rule-grid"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="global-heading">
+        <h2 id="global-heading" data-i18n="optionsGlobal"></h2>
+        <label class="switch-row">
+          <span class="switch">
+            <input type="checkbox" id="global-enabled" data-i18n-aria-label="optionsGlobalEnabled" />
+            <span class="switch-track"></span>
+          </span>
+          <span data-i18n="optionsGlobalEnabled"></span>
+        </label>
+        <p class="hint" data-i18n="optionsGlobalHint"></p>
+
+        <h3 data-i18n="optionsDefaults"></h3>
+        <div class="grid-2">
+          <label class="field-block">
+            <span class="label-text" data-i18n="optionsIntervalMin"></span>
+            <input id="default-min" type="number" min="30" max="86400" step="1" />
+          </label>
+          <label class="field-block">
+            <span class="label-text" data-i18n="optionsIntervalMax"></span>
+            <input id="default-max" type="number" min="30" max="86400" step="1" />
+          </label>
+        </div>
+        <p class="hint" id="default-preview"></p>
+
+        <h3 data-i18n="optionsDefaultOptions"></h3>
+        <div class="option-grid" id="default-options">
+          <label class="check-row">
+            <input type="checkbox" data-option="skipActive" />
+            <span data-i18n="optionsSkipActive"></span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" data-option="skipAudible" />
+            <span data-i18n="optionsSkipAudible"></span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" data-option="reloadAllTabs" />
+            <span data-i18n="optionsReloadAllTabs"></span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" data-option="bypassCache" />
+            <span data-i18n="optionsBypassCache"></span>
+          </label>
+        </div>
+        <div class="inline-actions">
+          <button id="save-defaults" class="btn primary" data-i18n="optionsSaveDefaults"></button>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="io-heading">
+        <h2 id="io-heading" data-i18n="optionsImportExport"></h2>
+        <p class="hint" data-i18n="optionsImportHint"></p>
+        <div class="inline-actions">
+          <select id="import-mode" data-i18n-aria-label="optionsImport">
+            <option value="merge" data-i18n="optionsImportMerge"></option>
+            <option value="replace" data-i18n="optionsImportReplace"></option>
+          </select>
+          <input type="file" id="import-file" accept=".json,application/json" hidden />
+          <button id="import-btn" class="btn" data-i18n="optionsImport"></button>
+          <button id="export-btn" class="btn" data-i18n="optionsExport"></button>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="about-heading">
+        <h2 id="about-heading" data-i18n="optionsAbout"></h2>
+        <h3 data-i18n="optionsPermissions"></h3>
+        <ul class="plain-list">
+          <li data-i18n="optionsPermAlarms"></li>
+          <li data-i18n="optionsPermStorage"></li>
+          <li data-i18n="optionsPermTabs"></li>
+        </ul>
+        <p class="hint" data-i18n="optionsPrivacy"></p>
+        <p class="hint" data-i18n="optionsAutoOpenNote"></p>
+        <p class="hint">
+          <a
+            id="repo-link"
+            href="https://github.com/breeze86/page-pulse"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="optionsRepo"
+          ></a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="page-footer muted">
+      <span>PagePulse · 页脉</span>
+      <span id="footer-version"></span>
+    </footer>
+
+    <dialog id="rule-dialog">
+      <form id="rule-form" novalidate>
+        <h2 id="dialog-title"></h2>
+
+        <div class="field">
+          <label for="rule-name" data-i18n="optionsRuleName"></label>
+          <input id="rule-name" type="text" maxlength="60" data-i18n-placeholder="optionsRuleNamePlaceholder" />
+        </div>
+
+        <div class="field">
+          <label for="match-type" data-i18n="optionsMatchType"></label>
+          <select id="match-type">
+            <option value="host" data-i18n="optionsMatchHost"></option>
+            <option value="glob" data-i18n="optionsMatchGlob"></option>
+            <option value="regex" data-i18n="optionsMatchRegex"></option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="match-value" data-i18n="optionsMatchValue"></label>
+          <input id="match-value" type="text" spellcheck="false" autocomplete="off" />
+          <p class="hint" id="match-hint"></p>
+        </div>
+
+        <div class="field">
+          <label for="start-url" data-i18n="optionsStartUrl"></label>
+          <input id="start-url" type="url" placeholder="https://example.com/" spellcheck="false" />
+          <p class="hint" data-i18n="optionsStartUrlHint"></p>
+          <p class="hint warn" id="start-url-warning" data-i18n="optionsStartUrlWarning" hidden></p>
+        </div>
+
+        <fieldset>
+          <legend data-i18n="optionsInterval"></legend>
+          <div class="grid-2">
+            <label class="field-block">
+              <span class="label-text" data-i18n="optionsIntervalMin"></span>
+              <input id="interval-min" type="number" min="30" max="86400" step="1" />
+            </label>
+            <label class="field-block">
+              <span class="label-text" data-i18n="optionsIntervalMax"></span>
+              <input id="interval-max" type="number" min="30" max="86400" step="1" />
+            </label>
+          </div>
+          <p class="hint" id="interval-preview"></p>
+          <p class="hint" data-i18n="optionsIntervalHint"></p>
+        </fieldset>
+
+        <fieldset>
+          <legend data-i18n="optionsRuleOptions"></legend>
+          <div class="option-grid">
+            <label class="check-row">
+              <input type="checkbox" id="opt-skip-active" />
+              <span data-i18n="optionsSkipActive"></span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" id="opt-skip-audible" />
+              <span data-i18n="optionsSkipAudible"></span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" id="opt-reload-all" />
+              <span data-i18n="optionsReloadAllTabs"></span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" id="opt-bypass-cache" />
+              <span data-i18n="optionsBypassCache"></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <label class="switch-row">
+          <span class="switch">
+            <input type="checkbox" id="rule-enabled" data-i18n-aria-label="optionsRuleEnabled" />
+            <span class="switch-track"></span>
+          </span>
+          <span data-i18n="optionsRuleEnabled"></span>
+        </label>
+
+        <p class="form-error" id="form-error" role="alert" aria-live="assertive" hidden></p>
+
+        <div class="dialog-actions">
+          <button type="button" id="cancel-rule" class="btn ghost" data-i18n="cancel"></button>
+          <button type="submit" class="btn primary" data-i18n="optionsSaveRule"></button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

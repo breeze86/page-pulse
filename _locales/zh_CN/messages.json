@@ -1,0 +1,407 @@
+{
+  "appName": {
+    "message": "PagePulse - 随机保活刷新"
+  },
+  "appDesc": {
+    "message": "按随机时间周期自动刷新指定页面（可同时配置多个网站，互不干扰），让网站保持活跃。"
+  },
+  "actionTitle": {
+    "message": "PagePulse - 随机保活刷新"
+  },
+  "save": {
+    "message": "保存"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "delete": {
+    "message": "删除"
+  },
+  "edit": {
+    "message": "编辑"
+  },
+  "refreshNow": {
+    "message": "立即刷新"
+  },
+  "settings": {
+    "message": "设置"
+  },
+  "versionLabel": {
+    "message": "版本 $1"
+  },
+  "never": {
+    "message": "从未"
+  },
+  "paused": {
+    "message": "已暂停"
+  },
+  "enabled": {
+    "message": "已启用"
+  },
+  "disabled": {
+    "message": "已停用"
+  },
+  "confirmDelete": {
+    "message": "确定删除规则「$1」？此操作不可撤销。"
+  },
+  "unnamedRule": {
+    "message": "未命名规则"
+  },
+  "durationRange": {
+    "message": "$1 – $2"
+  },
+  "durationHour": {
+    "message": "小时"
+  },
+  "durationMinute": {
+    "message": "分钟"
+  },
+  "durationSecond": {
+    "message": "秒"
+  },
+  "actionFailed": {
+    "message": "操作失败：$1"
+  },
+  "popupStatusActive": {
+    "message": "启用中"
+  },
+  "popupPaused": {
+    "message": "已暂停自动刷新"
+  },
+  "popupNext": {
+    "message": "下次"
+  },
+  "popupDue": {
+    "message": "即将刷新"
+  },
+  "popupEmptyTitle": {
+    "message": "还没有保活规则"
+  },
+  "popupEmptyHint": {
+    "message": "添加一个网站，PagePulse 会按随机节奏刷新它。"
+  },
+  "popupAddSite": {
+    "message": "添加网站"
+  },
+  "popupNoMatch": {
+    "message": "没有匹配的标签页"
+  },
+  "popupRefreshed": {
+    "message": "已刷新 $1 个标签页"
+  },
+  "popupOpened": {
+    "message": "已自动打开标签页"
+  },
+  "popupSkipped": {
+    "message": "已跳过 $1 个标签页"
+  },
+  "popupOpenSettings": {
+    "message": "打开设置"
+  },
+  "popupGlobalToggle": {
+    "message": "全局开关"
+  },
+  "popupRefresh": {
+    "message": "立即刷新"
+  },
+  "popupEditRule": {
+    "message": "编辑规则"
+  },
+  "popupRuleCount": {
+    "message": "共 $1 条规则"
+  },
+  "popupLastOutcome": {
+    "message": "上次：$1"
+  },
+  "outcomeReloaded": {
+    "message": "已刷新"
+  },
+  "outcomeOpened": {
+    "message": "已打开标签页"
+  },
+  "outcomeSkipped": {
+    "message": "已跳过"
+  },
+  "outcomeNoTab": {
+    "message": "无标签页可刷新"
+  },
+  "outcomeError": {
+    "message": "执行失败"
+  },
+  "optionsTitle": {
+    "message": "设置"
+  },
+  "optionsSubtitle": {
+    "message": "配置保活规则与默认参数"
+  },
+  "optionsRules": {
+    "message": "保活规则"
+  },
+  "optionsAddRule": {
+    "message": "添加规则"
+  },
+  "optionsNoRules": {
+    "message": "还没有规则，点击「添加规则」开始。"
+  },
+  "optionsGlobal": {
+    "message": "全局"
+  },
+  "optionsGlobalEnabled": {
+    "message": "启用 PagePulse"
+  },
+  "optionsGlobalHint": {
+    "message": "关闭后所有规则暂停并清除定时器；重新开启后按各自随机区间重新排期。"
+  },
+  "optionsDefaults": {
+    "message": "新规则默认值"
+  },
+  "optionsDefaultInterval": {
+    "message": "默认随机区间（秒）"
+  },
+  "optionsIntervalMin": {
+    "message": "最小"
+  },
+  "optionsIntervalMax": {
+    "message": "最大"
+  },
+  "optionsIntervalPreview": {
+    "message": "约 $1"
+  },
+  "optionsSaveDefaults": {
+    "message": "保存默认值"
+  },
+  "optionsSaved": {
+    "message": "已保存"
+  },
+  "optionsDefaultOptions": {
+    "message": "默认刷新策略"
+  },
+  "optionsSkipActive": {
+    "message": "跳过前台聚焦的标签页"
+  },
+  "optionsSkipActiveHint": {
+    "message": "避免打断你正在看的页面。"
+  },
+  "optionsSkipAudible": {
+    "message": "跳过正在播放声音的标签页"
+  },
+  "optionsSkipAudibleHint": {
+    "message": "避免打断音乐或视频。"
+  },
+  "optionsReloadAllTabs": {
+    "message": "刷新所有匹配的标签页"
+  },
+  "optionsReloadAllTabsHint": {
+    "message": "关闭后每轮只刷新第一个匹配的标签页。"
+  },
+  "optionsBypassCache": {
+    "message": "强制刷新（绕过缓存）"
+  },
+  "optionsBypassCacheHint": {
+    "message": "以 bypassCache 方式重载页面，请求更重。"
+  },
+  "optionsAutoOpenNote": {
+    "message": "到点时如果该站点没有任何标签页，会自动在后台打开一个。"
+  },
+  "optionsImportExport": {
+    "message": "导入 / 导出"
+  },
+  "optionsImport": {
+    "message": "导入 JSON"
+  },
+  "optionsImportMerge": {
+    "message": "合并"
+  },
+  "optionsImportReplace": {
+    "message": "覆盖"
+  },
+  "optionsExport": {
+    "message": "导出 JSON"
+  },
+  "optionsImportHint": {
+    "message": "导出为 JSON 文件；合并会保留现有规则，覆盖会替换全部规则。"
+  },
+  "optionsImportDone": {
+    "message": "已导入 $1 条规则"
+  },
+  "optionsImportError": {
+    "message": "导入失败：$1"
+  },
+  "optionsExportDone": {
+    "message": "已导出"
+  },
+  "optionsAbout": {
+    "message": "关于"
+  },
+  "optionsPermissions": {
+    "message": "权限说明"
+  },
+  "optionsPermAlarms": {
+    "message": "alarms：按随机周期定时触发刷新。"
+  },
+  "optionsPermStorage": {
+    "message": "storage：只在本地保存规则与统计。"
+  },
+  "optionsPermTabs": {
+    "message": "tabs：读取标签页 URL 以匹配规则，并刷新或打开标签页。"
+  },
+  "optionsPrivacy": {
+    "message": "不收集、不上传任何数据；所有配置只存在本机浏览器里。"
+  },
+  "optionsRepo": {
+    "message": "项目主页"
+  },
+  "optionsVersion": {
+    "message": "版本 $1"
+  },
+  "optionsNewRule": {
+    "message": "新建规则"
+  },
+  "optionsEditRule": {
+    "message": "编辑规则"
+  },
+  "optionsRuleName": {
+    "message": "名称"
+  },
+  "optionsRuleNamePlaceholder": {
+    "message": "例如：知乎 / 工单后台"
+  },
+  "optionsMatchType": {
+    "message": "匹配方式"
+  },
+  "optionsMatchValue": {
+    "message": "匹配内容"
+  },
+  "optionsMatchHost": {
+    "message": "域名"
+  },
+  "optionsMatchGlob": {
+    "message": "URL 通配"
+  },
+  "optionsMatchRegex": {
+    "message": "正则表达式"
+  },
+  "optionsMatchHostPlaceholder": {
+    "message": "example.com 或 *.example.com"
+  },
+  "optionsMatchGlobPlaceholder": {
+    "message": "https://example.com/app/**"
+  },
+  "optionsMatchRegexPlaceholder": {
+    "message": "https://example\\.com/(app|work)/"
+  },
+  "optionsMatchHostHint": {
+    "message": "匹配该域名及其所有子域，忽略端口。"
+  },
+  "optionsMatchGlobHint": {
+    "message": "支持 *（不跨 /）与 **（跨任意字符）；不写路径表示匹配任意路径。"
+  },
+  "optionsMatchRegexHint": {
+    "message": "对完整 URL 做不区分大小写的匹配，长度不超过 500。"
+  },
+  "optionsStartUrl": {
+    "message": "启动 URL（可选）"
+  },
+  "optionsStartUrlHint": {
+    "message": "无标签页时打开它；留空则按域名或通配推导。"
+  },
+  "optionsInterval": {
+    "message": "刷新间隔（秒）"
+  },
+  "optionsIntervalHint": {
+    "message": "范围 30–86400 秒；每轮触发都会重新随机抽取。"
+  },
+  "optionsRuleEnabled": {
+    "message": "启用此规则"
+  },
+  "optionsRuleOptions": {
+    "message": "刷新策略"
+  },
+  "optionsSaveRule": {
+    "message": "保存规则"
+  },
+  "optionsDeleteRule": {
+    "message": "删除规则"
+  },
+  "optionsRuleSaved": {
+    "message": "规则已保存"
+  },
+  "optionsFormInvalid": {
+    "message": "请检查表单：$1"
+  },
+  "optionsStats": {
+    "message": "已刷新 $1 次 · 上次：$2"
+  },
+  "optionsNextRun": {
+    "message": "下次：$1"
+  },
+  "optionsNeverRun": {
+    "message": "尚未运行"
+  },
+  "optionsStartUrlWarning": {
+    "message": "正则规则无法推导启动 URL；留空时若无标签页将不会自动打开。"
+  },
+  "optionsMatchSummary": {
+    "message": "匹配：$1"
+  },
+  "errNameTooLong": {
+    "message": "名称不能超过 60 个字符"
+  },
+  "errMatchType": {
+    "message": "匹配方式无效"
+  },
+  "errMatchRequired": {
+    "message": "请填写匹配内容"
+  },
+  "errMatchHost": {
+    "message": "域名格式不正确（示例：example.com）"
+  },
+  "errMatchGlob": {
+    "message": "URL 通配格式不正确（示例：https://example.com/app/**）"
+  },
+  "errMatchRegex": {
+    "message": "正则表达式无效"
+  },
+  "errStartUrl": {
+    "message": "启动 URL 必须是 http(s) 地址"
+  },
+  "errIntervalRequired": {
+    "message": "请填写随机区间"
+  },
+  "errIntervalOrder": {
+    "message": "最小间隔不能大于最大间隔"
+  },
+  "errIntervalRange": {
+    "message": "间隔需在 30–86400 秒之间"
+  },
+  "errLimitReached": {
+    "message": "规则数量已达上限（$1 条）"
+  },
+  "errStorage": {
+    "message": "本地存储写入失败"
+  },
+  "errNotFound": {
+    "message": "规则不存在"
+  },
+  "errImportInvalid": {
+    "message": "JSON 结构不正确"
+  },
+  "errUnknown": {
+    "message": "未知错误"
+  },
+  "chipSkipActive": {
+    "message": "跳过前台"
+  },
+  "chipSkipAudible": {
+    "message": "跳过有声"
+  },
+  "chipAllTabs": {
+    "message": "全部标签页"
+  },
+  "chipBypassCache": {
+    "message": "强制刷新"
+  },
+  "chipStartUrl": {
+    "message": "启动 URL"
+  }
+}

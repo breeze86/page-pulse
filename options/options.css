@@ -1,0 +1,285 @@
+body.options {
+  padding: 28px 20px 40px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 920px;
+  margin: 0 auto 18px;
+}
+
+.page-logo {
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  flex: 0 0 auto;
+}
+
+.page-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-heading h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+}
+
+.page-heading p {
+  margin: 2px 0 0;
+  font-size: 12px;
+}
+
+.pill {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+main {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel {
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.panel h3 {
+  margin: 20px 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.panel-head h2 {
+  flex: 1;
+}
+
+.rule-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rule-card {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.rule-card.is-off {
+  opacity: 0.62;
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-top .switch {
+  margin-top: 2px;
+}
+
+.card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+  text-transform: none;
+  letter-spacing: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-meta {
+  margin: 2px 0 0;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-actions {
+  display: flex;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 9px 0 0;
+}
+
+.card-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  flex-wrap: wrap;
+}
+
+.card-status [data-countdown] {
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.card-status [data-countdown].due {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.empty {
+  margin: 6px 0 2px;
+  color: var(--muted);
+}
+
+.switch-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 0;
+  cursor: pointer;
+}
+
+.switch-row > span:last-child {
+  font-weight: 600;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 420px;
+}
+
+.field-block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label-text {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 16px;
+  margin-top: 4px;
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 24px;
+  cursor: pointer;
+}
+
+.check-row input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--primary);
+  margin: 0;
+}
+
+.inline-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.inline-actions select {
+  width: auto;
+  min-width: 110px;
+}
+
+#default-preview {
+  margin-top: 6px;
+}
+
+.plain-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.plain-list li + li {
+  margin-top: 3px;
+}
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 920px;
+  margin: 22px auto 0;
+  font-size: 11px;
+}
+
+dialog .grid-2 {
+  max-width: none;
+}
+
+dialog .switch-row {
+  margin: 4px 0 16px;
+}
+
+@media (max-width: 640px) {
+  body.options {
+    padding: 18px 12px 28px;
+  }
+  .grid-2,
+  .option-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .card-top {
+    flex-wrap: wrap;
+  }
+  .card-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

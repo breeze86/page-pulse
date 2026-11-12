@@ -1,0 +1,407 @@
+{
+  "appName": {
+    "message": "PagePulse - Random Keep-Alive Reload"
+  },
+  "appDesc": {
+    "message": "Refreshes chosen pages on a random schedule so sessions stay alive. Multiple sites, independent timers."
+  },
+  "actionTitle": {
+    "message": "PagePulse"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "edit": {
+    "message": "Edit"
+  },
+  "refreshNow": {
+    "message": "Refresh now"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "versionLabel": {
+    "message": "Version $1"
+  },
+  "never": {
+    "message": "never"
+  },
+  "paused": {
+    "message": "Paused"
+  },
+  "enabled": {
+    "message": "Enabled"
+  },
+  "disabled": {
+    "message": "Disabled"
+  },
+  "confirmDelete": {
+    "message": "Delete rule \"$1\"? This cannot be undone."
+  },
+  "unnamedRule": {
+    "message": "Unnamed rule"
+  },
+  "durationRange": {
+    "message": "$1 – $2"
+  },
+  "durationHour": {
+    "message": "h"
+  },
+  "durationMinute": {
+    "message": "min"
+  },
+  "durationSecond": {
+    "message": "s"
+  },
+  "actionFailed": {
+    "message": "Action failed: $1"
+  },
+  "popupStatusActive": {
+    "message": "Active"
+  },
+  "popupPaused": {
+    "message": "Auto refresh paused"
+  },
+  "popupNext": {
+    "message": "Next"
+  },
+  "popupDue": {
+    "message": "Due now"
+  },
+  "popupEmptyTitle": {
+    "message": "No rules yet"
+  },
+  "popupEmptyHint": {
+    "message": "Add a site and PagePulse will refresh it on a random rhythm."
+  },
+  "popupAddSite": {
+    "message": "Add site"
+  },
+  "popupNoMatch": {
+    "message": "No matching tab"
+  },
+  "popupRefreshed": {
+    "message": "Refreshed $1 tab(s)"
+  },
+  "popupOpened": {
+    "message": "Opened a tab"
+  },
+  "popupSkipped": {
+    "message": "Skipped $1 tab(s)"
+  },
+  "popupOpenSettings": {
+    "message": "Open settings"
+  },
+  "popupGlobalToggle": {
+    "message": "Global switch"
+  },
+  "popupRefresh": {
+    "message": "Refresh now"
+  },
+  "popupEditRule": {
+    "message": "Edit rule"
+  },
+  "popupRuleCount": {
+    "message": "$1 rule(s)"
+  },
+  "popupLastOutcome": {
+    "message": "Last: $1"
+  },
+  "outcomeReloaded": {
+    "message": "refreshed"
+  },
+  "outcomeOpened": {
+    "message": "opened a tab"
+  },
+  "outcomeSkipped": {
+    "message": "skipped"
+  },
+  "outcomeNoTab": {
+    "message": "no tab to refresh"
+  },
+  "outcomeError": {
+    "message": "failed"
+  },
+  "optionsTitle": {
+    "message": "Settings"
+  },
+  "optionsSubtitle": {
+    "message": "Manage rules and defaults"
+  },
+  "optionsRules": {
+    "message": "Rules"
+  },
+  "optionsAddRule": {
+    "message": "Add rule"
+  },
+  "optionsNoRules": {
+    "message": "No rules yet. Click \"Add rule\" to start."
+  },
+  "optionsGlobal": {
+    "message": "Global"
+  },
+  "optionsGlobalEnabled": {
+    "message": "Enable PagePulse"
+  },
+  "optionsGlobalHint": {
+    "message": "Turning this off pauses every rule and clears its timer; turning it back on reschedules each rule inside its random range."
+  },
+  "optionsDefaults": {
+    "message": "Defaults for new rules"
+  },
+  "optionsDefaultInterval": {
+    "message": "Default random range (seconds)"
+  },
+  "optionsIntervalMin": {
+    "message": "Min"
+  },
+  "optionsIntervalMax": {
+    "message": "Max"
+  },
+  "optionsIntervalPreview": {
+    "message": "about $1"
+  },
+  "optionsSaveDefaults": {
+    "message": "Save defaults"
+  },
+  "optionsSaved": {
+    "message": "Saved"
+  },
+  "optionsDefaultOptions": {
+    "message": "Default refresh policy"
+  },
+  "optionsSkipActive": {
+    "message": "Skip the focused tab"
+  },
+  "optionsSkipActiveHint": {
+    "message": "Avoid interrupting the page you are looking at."
+  },
+  "optionsSkipAudible": {
+    "message": "Skip tabs playing audio"
+  },
+  "optionsSkipAudibleHint": {
+    "message": "Avoid interrupting music or video."
+  },
+  "optionsReloadAllTabs": {
+    "message": "Refresh every matching tab"
+  },
+  "optionsReloadAllTabsHint": {
+    "message": "When off, only the first matching tab is refreshed each round."
+  },
+  "optionsBypassCache": {
+    "message": "Hard refresh (bypass cache)"
+  },
+  "optionsBypassCacheHint": {
+    "message": "Reloads with bypassCache; heavier on the network."
+  },
+  "optionsAutoOpenNote": {
+    "message": "When a rule fires with no matching tab open, PagePulse opens one in the background."
+  },
+  "optionsImportExport": {
+    "message": "Import / Export"
+  },
+  "optionsImport": {
+    "message": "Import JSON"
+  },
+  "optionsImportMerge": {
+    "message": "Merge"
+  },
+  "optionsImportReplace": {
+    "message": "Replace"
+  },
+  "optionsExport": {
+    "message": "Export JSON"
+  },
+  "optionsImportHint": {
+    "message": "Export to a JSON file; merge keeps current rules, replace swaps all of them."
+  },
+  "optionsImportDone": {
+    "message": "Imported $1 rule(s)"
+  },
+  "optionsImportError": {
+    "message": "Import failed: $1"
+  },
+  "optionsExportDone": {
+    "message": "Exported"
+  },
+  "optionsAbout": {
+    "message": "About"
+  },
+  "optionsPermissions": {
+    "message": "Permissions"
+  },
+  "optionsPermAlarms": {
+    "message": "alarms: fires refreshes on a random schedule."
+  },
+  "optionsPermStorage": {
+    "message": "storage: keeps rules and counters locally."
+  },
+  "optionsPermTabs": {
+    "message": "tabs: reads tab URLs to match rules and refreshes or opens tabs."
+  },
+  "optionsPrivacy": {
+    "message": "No data is collected or uploaded. Everything stays in your browser."
+  },
+  "optionsRepo": {
+    "message": "Project home"
+  },
+  "optionsVersion": {
+    "message": "Version $1"
+  },
+  "optionsNewRule": {
+    "message": "New rule"
+  },
+  "optionsEditRule": {
+    "message": "Edit rule"
+  },
+  "optionsRuleName": {
+    "message": "Name"
+  },
+  "optionsRuleNamePlaceholder": {
+    "message": "e.g. Reddit / admin panel"
+  },
+  "optionsMatchType": {
+    "message": "Match type"
+  },
+  "optionsMatchValue": {
+    "message": "Match value"
+  },
+  "optionsMatchHost": {
+    "message": "Host"
+  },
+  "optionsMatchGlob": {
+    "message": "URL glob"
+  },
+  "optionsMatchRegex": {
+    "message": "Regular expression"
+  },
+  "optionsMatchHostPlaceholder": {
+    "message": "example.com or *.example.com"
+  },
+  "optionsMatchGlobPlaceholder": {
+    "message": "https://example.com/app/**"
+  },
+  "optionsMatchRegexPlaceholder": {
+    "message": "https://example\\.com/(app|work)/"
+  },
+  "optionsMatchHostHint": {
+    "message": "Matches the host and all of its subdomains; ports are ignored."
+  },
+  "optionsMatchGlobHint": {
+    "message": "* does not cross /, ** does; omitting the path matches any path."
+  },
+  "optionsMatchRegexHint": {
+    "message": "Case-insensitive match against the full URL, up to 500 characters."
+  },
+  "optionsStartUrl": {
+    "message": "Start URL (optional)"
+  },
+  "optionsStartUrlHint": {
+    "message": "Opened when no tab exists; leave empty to derive it from the host or glob."
+  },
+  "optionsInterval": {
+    "message": "Interval (seconds)"
+  },
+  "optionsIntervalHint": {
+    "message": "30–86400 seconds; a new random delay is drawn on every round."
+  },
+  "optionsRuleEnabled": {
+    "message": "Enable this rule"
+  },
+  "optionsRuleOptions": {
+    "message": "Refresh policy"
+  },
+  "optionsSaveRule": {
+    "message": "Save rule"
+  },
+  "optionsDeleteRule": {
+    "message": "Delete rule"
+  },
+  "optionsRuleSaved": {
+    "message": "Rule saved"
+  },
+  "optionsFormInvalid": {
+    "message": "Please check the form: $1"
+  },
+  "optionsStats": {
+    "message": "Refreshed $1 time(s) · last: $2"
+  },
+  "optionsNextRun": {
+    "message": "Next: $1"
+  },
+  "optionsNeverRun": {
+    "message": "Not run yet"
+  },
+  "optionsStartUrlWarning": {
+    "message": "A regex rule cannot derive a start URL; without one, no tab will be opened."
+  },
+  "optionsMatchSummary": {
+    "message": "Match: $1"
+  },
+  "errNameTooLong": {
+    "message": "Name must be 60 characters or fewer"
+  },
+  "errMatchType": {
+    "message": "Invalid match type"
+  },
+  "errMatchRequired": {
+    "message": "Match value is required"
+  },
+  "errMatchHost": {
+    "message": "Invalid host (e.g. example.com)"
+  },
+  "errMatchGlob": {
+    "message": "Invalid URL glob (e.g. https://example.com/app/**)"
+  },
+  "errMatchRegex": {
+    "message": "Invalid regular expression"
+  },
+  "errStartUrl": {
+    "message": "Start URL must be an http(s) URL"
+  },
+  "errIntervalRequired": {
+    "message": "Interval is required"
+  },
+  "errIntervalOrder": {
+    "message": "Min interval cannot be greater than max"
+  },
+  "errIntervalRange": {
+    "message": "Interval must be between 30 and 86400 seconds"
+  },
+  "errLimitReached": {
+    "message": "Rule limit reached ($1)"
+  },
+  "errStorage": {
+    "message": "Failed to write local storage"
+  },
+  "errNotFound": {
+    "message": "Rule not found"
+  },
+  "errImportInvalid": {
+    "message": "Invalid JSON structure"
+  },
+  "errUnknown": {
+    "message": "Unknown error"
+  },
+  "chipSkipActive": {
+    "message": "skip focused"
+  },
+  "chipSkipAudible": {
+    "message": "skip audio"
+  },
+  "chipAllTabs": {
+    "message": "all tabs"
+  },
+  "chipBypassCache": {
+    "message": "bypass cache"
+  },
+  "chipStartUrl": {
+    "message": "start URL"
+  }
+}

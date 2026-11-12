@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PagePulse</title>
+    <link rel="stylesheet" href="../src/ui/base.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body class="popup">
+    <header class="popup-header">
+      <img class="brand-mark" src="../icons/icon48.png" alt="" width="28" height="28" />
+      <div class="brand-text">
+        <span class="brand-name">PagePulse</span>
+        <span class="brand-status" id="global-status"></span>
+      </div>
+      <label class="switch" data-i18n-title="popupGlobalToggle">
+        <input type="checkbox" id="global-toggle" data-i18n-aria-label="popupGlobalToggle" />
+        <span class="switch-track"></span>
+      </label>
+    </header>
+
+    <div id="paused-banner" class="banner warn" data-i18n="popupPaused" hidden></div>
+
+    <ul id="rules" class="rule-list" data-i18n-aria-label="optionsRules"></ul>
+
+    <div id="empty" class="empty-state" hidden>
+      <p class="empty-title" data-i18n="popupEmptyTitle"></p>
+      <p class="muted" data-i18n="popupEmptyHint"></p>
+    </div>
+
+    <footer class="popup-footer">
+      <button id="add-site" class="btn primary" data-i18n="popupAddSite"></button>
+      <button id="open-settings" class="btn ghost" data-i18n="popupOpenSettings"></button>
+      <span id="version" class="version muted"></span>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

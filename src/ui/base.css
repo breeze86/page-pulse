@@ -1,0 +1,363 @@
+/* Shared theme for PagePulse extension pages. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #f1f3f9;
+  --border: #e2e5ee;
+  --text: #1b1f2a;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+  --primary-strong: #4338ca;
+  --primary-soft: #eef2ff;
+  --danger: #dc2626;
+  --warn-bg: #fff7e6;
+  --warn-text: #92400e;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(17, 24, 39, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12141c;
+    --surface: #1a1d28;
+    --surface-2: #222634;
+    --border: #2c3145;
+    --text: #e8eaf2;
+    --muted: #9aa3b8;
+    --primary: #818cf8;
+    --primary-strong: #a5b4fc;
+    --primary-soft: #2a2f4a;
+    --warn-bg: #3a2f1b;
+    --warn-text: #fbbf24;
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--primary);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.hint {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hint.warn {
+  color: var(--warn-text);
+}
+
+/* Buttons ------------------------------------------------------------------ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.05s;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--surface-2);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.btn.primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--primary-strong);
+  border-color: var(--primary-strong);
+}
+
+.btn.ghost {
+  background: transparent;
+}
+
+.btn.danger {
+  color: var(--danger);
+  border-color: var(--border);
+}
+
+.btn.danger:hover {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.btn.small {
+  min-height: 26px;
+  padding: 0 9px;
+  font-size: 12px;
+  border-radius: 7px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.icon-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+/* Switch ------------------------------------------------------------------- */
+
+.switch {
+  position: relative;
+  display: inline-flex;
+  width: 38px;
+  height: 22px;
+  flex: 0 0 auto;
+}
+
+.switch input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.switch-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--border);
+  transition: background 0.15s;
+  pointer-events: none;
+}
+
+.switch-track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s;
+}
+
+.switch input:checked + .switch-track {
+  background: var(--primary);
+}
+
+.switch input:checked + .switch-track::after {
+  transform: translateX(16px);
+}
+
+.switch input:focus-visible + .switch-track {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Chips & banners ---------------------------------------------------------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.chip.match {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.banner {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.banner.warn {
+  background: var(--warn-bg);
+  color: var(--warn-text);
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  max-width: calc(100% - 24px);
+  padding: 8px 12px;
+  border-radius: 9px;
+  background: rgba(24, 27, 36, 0.92);
+  color: #fff;
+  font-size: 12px;
+  box-shadow: var(--shadow);
+  z-index: 50;
+}
+
+.toast.error {
+  background: rgba(185, 28, 28, 0.95);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Dialog ------------------------------------------------------------------- */
+
+dialog {
+  width: min(520px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+dialog::backdrop {
+  background: rgba(15, 18, 28, 0.45);
+}
+
+dialog h2 {
+  margin: 0 0 14px;
+  font-size: 16px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.field > label,
+.field > legend,
+.field > span.label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="number"],
+input[type="search"],
+select {
+  width: 100%;
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+fieldset {
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+}
+
+.form-error {
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}

@@ -1,0 +1,152 @@
+body.popup {
+  width: 380px;
+  max-height: 560px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px 10px;
+}
+
+.brand-mark {
+  border-radius: 8px;
+  flex: 0 0 auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.brand-status {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+#paused-banner {
+  margin: 0 16px 8px;
+}
+
+.rule-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 10px;
+}
+
+.rule + .rule {
+  margin-top: 2px;
+}
+
+.rule:hover {
+  background: var(--surface);
+}
+
+.rule.is-off .rule-body {
+  opacity: 0.55;
+}
+
+.rule-body {
+  min-width: 0;
+  flex: 1;
+}
+
+.rule-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.rule-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rule-head .chip {
+  max-width: 45%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rule-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.rule-meta .countdown {
+  font-variant-numeric: tabular-nums;
+}
+
+.rule-meta .countdown.due {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.rule-meta .warn {
+  color: var(--warn-text);
+}
+
+.rule-actions {
+  display: flex;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+.empty-state {
+  padding: 22px 20px 26px;
+  text-align: center;
+}
+
+.empty-title {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+.popup-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px 14px;
+  border-top: 1px solid var(--border);
+}
+
+.popup-footer .btn.primary {
+  flex: 1;
+}
+
+.version {
+  margin-left: auto;
+  font-size: 11px;
+}
+
+.popup .toast {
+  bottom: 58px;
+}

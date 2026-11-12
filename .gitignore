@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+
+# Build artifacts
+dist/
+*.zip
+
+# Dependencies (not used, kept for safety)
+node_modules/
+
+# Logs / coverage
+*.log
+coverage/
