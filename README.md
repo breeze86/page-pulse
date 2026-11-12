@@ -118,7 +118,7 @@ npm run pack
 | `dist/` | 当前版本的未压缩扩展目录（`manifest.json` 在根），可直接「加载已解压的扩展程序」 |
 | `release/page-pulse-extension-<version>.zip` | 商店上传与 GitHub Release 资产 |
 
-- **GitHub Release**：打 `v<version>` 标签，上传 `release/page-pulse-extension-<version>.zip`，正文可直接用 [CHANGELOG.md](CHANGELOG.md) 对应版本段落。
+- **GitHub Release**：打 `v<version>` 标签，**标题只用标签名**（如 `v0.1.2`，与 GitHub 默认一致），上传 `release/page-pulse-extension-<version>.zip`；版本亮点写在正文，可直接用 [CHANGELOG.md](CHANGELOG.md) 对应版本段落。
 - **Chrome Web Store**：上传 `release/page-pulse-extension-<version>.zip`，填写商店名 `PagePulse - 随机保活刷新`、简介、隐私问卷（选择「不收集用户数据」，说明 `tabs` 权限仅用于 URL 匹配）。
 - **Edge Add-ons**：同一 zip 直接上传；Edge 与 Chrome 共用 MV3 API，无需额外字段。
 - 版本号需同时修改 `manifest.json` 与 `package.json`（`npm run validate` 会检查一致性）。
